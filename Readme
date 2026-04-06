@@ -1,1 +1,78 @@
+# Web Link Scanner (Python)
 
+## 🛡️ Project Overview
+This is a **simple Python-based Web Link Scanner** that crawls a website to extract all internal and external links.  
+It is built using **only built-in Python modules**, so no external library installation is required.
+
+The scanner is beginner-friendly and can be used for educational purposes to understand **web crawling and basic vulnerability scanning concepts**.
+
+
+## 🧰 Technologies Used
+- Python 3.x  
+- Built-in modules:
+  - `urllib.request` → for HTTP requests  
+  - `urllib.parse` → to join and parse URLs  
+  - `html.parser` → to parse HTML and extract links  
+  - `socket` → to handle timeout  
+
+No additional libraries are required.
+
+## 📝 Features
+- Crawls all links from a given website URL  
+- Handles URL joining to make absolute URLs  
+- Sets timeout to avoid long waiting on unresponsive sites  
+- User-Agent header included to mimic a browser request  
+- Prints the total number of links found  
+
+
+## 💻 How to Use
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/web-link-scanner.git
+cd web-link-scanner
+
+##Run the Python scanner:
+1.python scanner.py
+2.Enter the target website URL when prompted:
+3.Enter URL: http://example.com
+
+##Sample Output
+Enter URL: http://example.com
+
+[+] Getting links...
+[+] Found 5 links
+
+[✔] Scan Complete
+[+] Found 5 links → indicates the number of links extracted from the website.
+[✔] Scan Complete → indicates that crawling is finished successfully.
+
+##How It Works
+Crawling Links
+
+The LinkParser class inherits from HTMLParser and extracts all <a> tag href attributes.
+Handling URLs
+
+Extracted relative URLs are converted to absolute URLs using urljoin.
+Opening URLs
+
+urlopen is used with a User-Agent header to mimic browser requests.
+Timeout is set via socket.setdefaulttimeout(10) to avoid hanging on unresponsive URLs.
+Output
+
+Prints the total number of links found.
+Designed as a foundation to add further features like XSS/SQL scanning in future.
+
+##🔮 Future Improvements
+Add XSS and SQL injection detection
+Multi-threaded crawling for speed
+Export results to a CSV or PDF report
+Build a GUI version for easier use
+
+##⚖️ License
+
+This project is for educational purposes. Do not use it for illegal activities.
+You are free to modify and extend it for learning.
+
+📌 Author
+Name: Mitali Sharma
